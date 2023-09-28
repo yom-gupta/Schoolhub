@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolHub Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            
+            
+        }
+
+        .signup-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            z-index: 2;
+            
+        }
+        form{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+        input{
+            margin: 10px;
+            height: 20px;
+
+        }
+
+
+        /*dfds*/
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>SchoolHub Signup</h2>
+        <button id="student-button" class="signup-button">Student</button>
+        
+        <button id="teacher-button" class="signup-button">School Staff</button>
+
+        <form id="student-form" style="display: none;" action="home.html">
+            <input type="text" placeholder="Student ID">
+            <input type="password" placeholder="Password"><br>
+            <input type="submit" class="signup-button" value="Signup" style="padding-bottom: 20px;"> 
+        </form>
+
+      
+
+        <form id="teacher-form" style="display: none;" action="teacher/home.html">
+            <input type="text" placeholder="Employee ID">
+            <input type="password" placeholder="Password"><br>
+            <input type="submit" class="signup-button" value="Signup" style="padding-bottom: 20px;"> 
+        </form>
+    </div>
+  
+    <script>
+        const studentButton = document.getElementById("student-button");
+        const teacherButton = document.getElementById("teacher-button");
+        const staffButton = document.getElementById("staff-button");
+        const studentForm = document.getElementById("student-form");
+        const teacherForm = document.getElementById("teacher-form");
+        const staffForm = document.getElementById("staff-form");
+
+        studentButton.addEventListener("click", () => {
+            studentForm.style.display = "block";
+            teacherForm.style.display = "none";
+            staffForm.style.display = "none";
+        });
+
+        teacherButton.addEventListener("click", () => {
+            studentForm.style.display = "none";
+            teacherForm.style.display = "block";
+            staffForm.style.display = "none";
+        });
+
+        staffButton.addEventListener("click", () => {
+            studentForm.style.display = "none";
+            teacherForm.style.display = "none";
+            staffForm.style.display = "block";
+        });
+    </script>
+</body>
+</html>
