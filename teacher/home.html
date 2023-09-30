@@ -22,6 +22,20 @@
       src="https://kit.fontawesome.com/5b938571dd.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+        /* Initial styles for the heart icon */
+.fas.fa-heart {
+  /* Your default heart icon styles */
+  color: gray; /* Change this to your desired default color */
+  transition: color 0.3s; /* Add a smooth color transition effect */
+}
+
+/* Styles for the heart icon when liked */
+.fas.fa-heart.liked {
+  color: red; /* Change to the desired 'liked' color (red in this case) */
+}
+
+    </style>
   </head>
   <body>
     <div class="sidebar">
@@ -145,11 +159,11 @@
           />
           <div class="post-icons">
             <div class="post-icons-left">
-              <i data-feather="heart"></i>
-              <i data-feather="notification-circle"></i>
-              <i data-feather="send"></i>
+              <i class="fas fa-heart heart-icon"></i> <!-- Heart icon -->
+                <i class="far fa-comment"></i> <!-- Comment icon -->  
+             <i class="fas fa-share share-icon"></i>
             </div>
-            <i data-feather="bookmark"></i>
+              
           </div>
           <p class="likes">256 likes</p>
           <p class="caption">Today is painting 🎨 competition in Library 📚</p>
@@ -177,11 +191,11 @@
           />
           <div class="post-icons">
             <div class="post-icons-left">
-              <i data-feather="heart"></i>
-              <i data-feather="notification-circle"></i>
-              <i data-feather="send"></i>
+              <i class="fas fa-heart heart-icon"></i> <!-- Heart icon -->
+                <i class="far fa-comment"></i> <!-- Comment icon -->  
+             <i class="fas fa-share share-icon"></i>
             </div>
-            <i data-feather="bookmark"></i>
+              
           </div>
           <p class="likes">652 likes</p>
           <p class="caption">CBSE 2023 datesheet of mid term released </p>
@@ -205,11 +219,11 @@
           <P>Students do examples of ch-1 for Geografi 🌎🌐</P>
           <div class="post-icons">
             <div class="post-icons-left">
-              <i data-feather="heart"></i>
-              <i data-feather="notification-circle"></i>
-              <i data-feather="send"></i>
+              <i class="fas fa-heart heart-icon"></i> <!-- Heart icon -->
+                <i class="far fa-comment"></i> <!-- Comment icon -->  
+             <i class="fas fa-share share-icon"></i>
             </div>
-            <i data-feather="bookmark"></i>
+              
           </div>
           <p class="likes">38 likes</p>
           
@@ -237,11 +251,11 @@
           />
           <div class="post-icons">
             <div class="post-icons-left">
-              <i data-feather="heart"></i>
-              <i data-feather="notification-circle"></i>
-              <i data-feather="send"></i>
+              <i class="fas fa-heart heart-icon"></i> <!-- Heart icon -->
+                <i class="far fa-comment"></i> <!-- Comment icon -->  
+             <i class="fas fa-share share-icon"></i>
             </div>
-            <i data-feather="bookmark"></i>
+              
           </div>
           <p class="likes">16 likes</p>
           <p class="caption">Do it in you copy</p>
@@ -269,11 +283,11 @@
           />
           <div class="post-icons">
             <div class="post-icons-left">
-              <i data-feather="heart"></i>
-              <i data-feather="notification-circle"></i>
-              <i data-feather="send"></i>
+              <i class="fas fa-heart heart-icon"></i> <!-- Heart icon -->
+                <i class="far fa-comment"></i> <!-- Comment icon -->  
+             <i class="fas fa-share share-icon"></i>
             </div>
-            <i data-feather="bookmark"></i>
+              
           </div>
           <p class="likes">100 likes</p>
           <p class="caption">tommorow is  Sing competition for  class VI to X <p>
@@ -301,11 +315,11 @@
           />
           <div class="post-icons">
             <div class="post-icons-left">
-              <i data-feather="heart"></i>
-              <i data-feather="notification-circle"></i>
-              <i data-feather="send"></i>
+              <i class="fas fa-heart heart-icon"></i> <!-- Heart icon -->
+                <i class="far fa-comment"></i> <!-- Comment icon -->  
+             <i class="fas fa-share share-icon"></i>
             </div>
-            <i data-feather="bookmark"></i>
+              
           </div>
           <p class="likes">1268 likes</p>
           <p class="caption">Spending even a few minutes in meditation can help restore your calm and inner peace. Anyone can practice meditation. It's simple and inexpensive. And it doesn't require any special equipment.</p>
@@ -337,6 +351,51 @@
       floatingPlus.addEventListener("click", () => {
         menu.classList.toggle("show-menu");
       });
+
+      
 </script>
+
+     <script>
+    // Get references to all heart icons
+    const heartIcons = document.querySelectorAll(".heart-icon");
+  
+    // Add a click event listener to each heart icon
+    heartIcons.forEach((heartIcon, index) => {
+      heartIcon.addEventListener("click", function () {
+        // Toggle the 'liked' class to change the heart color
+        heartIcon.classList.toggle("liked");
+      });
+    });
+  </script>
+  
+  <!-- JavaScript to handle sharing -->
+  <script>
+    // Get references to all share icons
+    const shareIcons = document.querySelectorAll(".share-icon");
+  
+    // Check if the Web Share API is supported
+    if (navigator.share) {
+      // Add a click event listener to each share icon
+      shareIcons.forEach((shareIcon, index) => {
+        shareIcon.addEventListener("click", async () => {
+          try {
+            await navigator.share({
+              title: "The Ultimate School Management and Communication Platform",
+              text: "SchoolHub is an all-in-one mobile app and website that centralizes school-related information, communication, and management. It empowers students, simplifies homework processes, and enhances school communication and engagement.",
+              url: "https://yom-gupta.github.io/Schoolhub/",
+            });
+            console.log("Successfully shared!");
+          } catch (error) {
+            console.error("Error sharing:", error);
+          }
+        });
+      });
+    } else {
+      // Web Share API is not supported, hide all share icons
+      shareIcons.forEach((shareIcon) => {
+        shareIcon.style.display = "none";
+      });
+    }
+  </script>
   </body>
 </html>
