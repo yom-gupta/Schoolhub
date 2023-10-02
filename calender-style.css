@@ -170,9 +170,11 @@ padding: 0;
   .sidebar {
     display: none;
   }
-  .wrapper{
-    margin-top:70%;
-  }
+ .wrapper {
+   margin-top:70%;
+    margin-bottom: -50%;
+   
+ }
   .bottom-navbar {
     display: flex;
     background-color: #000;
