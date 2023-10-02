@@ -110,7 +110,7 @@ padding: 0;
 .wrapper {
   
   position: relative;
-  margin-top: 70%;
+  margin-top: 30%;
   margin-left: 50%;
   margin-bottom: 0px;
   transform: translate(-50%, -50%);
@@ -197,7 +197,9 @@ padding: 0;
     background: #ffffff;
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
   }
-  
+  .wrapper{
+    margin-top: 70%;
+  }
   
 }
 
