@@ -125,9 +125,10 @@ padding: 0;
 .event{
   position: relative;
   bottom: 200px;
-  height: 50vh;
+  height: auto;
   width: auto;
   margin: auto;
+  margin-bottom:50px;
   padding: 15px;
   border-radius: 5px;
   width: 450px;
@@ -193,9 +194,9 @@ padding: 0;
     position: relative;
    
     bottom: 5%;
-    height: 60vh;
+    height: auto;
     width: 100%;
-  
+    margin-bottom:70px;
     padding: 15px;
     padding-bottom: 50%;
     border-radius: 5px;
